@@ -172,10 +172,67 @@ body {
     background: transparent;
     color: #777;
     cursor: not-allowed;
+    position: relative;
 }
 
 #status-btn i {
     margin-left: 6px;
+}
+
+/* دایره سبز چشمک زن وضعیت سرور */
+/* دکمه وضعیت سرور با چراغ نئون چشمک زن */
+#status-btn.active {
+    position: relative;
+    overflow: hidden;
+}
+
+/* دایره نئون چشمک زن */
+#status-btn.active::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 14px;
+    height: 14px;
+    background: #00ff00;
+    border-radius: 50%;
+    box-shadow:
+        0 0 6px #00ff00,
+        0 0 12px #00ff00,
+        0 0 20px #00ff00,
+        0 0 30px #00ff00;
+    animation: neon-blink 1.2s infinite alternate;
+}
+
+/* انیمیشن چشمک زن و نور نئون */
+@keyframes neon-blink {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.8);
+        box-shadow:
+            0 0 3px #00ff00,
+            0 0 8px #00ff00,
+            0 0 15px #00ff00,
+            0 0 25px #00ff00;
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1);
+        box-shadow:
+            0 0 6px #00ff00,
+            0 0 12px #00ff00,
+            0 0 20px #00ff00,
+            0 0 30px #00ff00;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+        box-shadow:
+            0 0 8px #00ff00,
+            0 0 16px #00ff00,
+            0 0 24px #00ff00,
+            0 0 36px #00ff00;
+    }
 }
 
 /* -------------------------------------
