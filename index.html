@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
     <title>ربات دنس فری فایر</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- جلوگیری از زوم موبایل -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- CSS نئون -->
     <link rel="stylesheet" href="style.css">
@@ -50,7 +53,9 @@
             <!-- دکمه‌ها -->
             <div class="button-group">
                 <button id="get-bot-btn"><i class="fa-solid fa-rocket"></i> دریافت ربات دنس</button>
-                <button id="status-btn" disabled><i class="fa-solid fa-chart-simple"></i> وضعیت سرور (به‌زودی)</button>
+                
+                <!-- وضعیت سرور با دایره سبز چشمک زن -->
+                <button id="status-btn" class="active"><i class="fa-solid fa-chart-simple"></i> وضعیت سرور</button>
             </div>
 
         </section>
