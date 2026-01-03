@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       startTimer();
 
     } catch {
-      showError("❌ سرور XP در دسترس نیست");
+      showError("❌ فرایند پیش نیاز اجرا نشده (سرور محلی خاموش است)");
     }
   });
 
