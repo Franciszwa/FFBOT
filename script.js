@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   creatorBtn.addEventListener("click", () => {
-    window.open("https://t.me/YOUR_USERNAME", "_blank");
+    window.open("https://t.me/Franciszw", "_blank");
   });
 
   function showSuccess(msg) {
