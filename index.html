@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>@Franciszw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS نئون -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- کانتینر اصلی -->
+<div id="app">
+
+    <!-- هدر -->
+    <header id="header">
+        <h1 id="title"><i class="fa-solid fa-robot"></i></h1>
+        <p id="subtitle">ارسال خودکار درخواست ربات دنس به اکانت شما *</p>
+    </header>
+
+    <!-- فرم اصلی -->
+    <section id="bot-section">
+
+        <!-- فیلد ورودی داینامیک -->
+        <div class="input-group">
+            <label for="ff-id" id="input-label">
+                <i class="fa-solid fa-gamepad"></i> آیدی فری فایر
+            </label>
+            <input type="text" id="ff-id" placeholder="مثال: 4233040092">
+        </div>
+
+        <!-- انتخاب نوع ربات -->
+        <div class="option-group">
+            <span class="option-title"><i class="fa-solid fa-gear"></i> نوع ربات</span>
+
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="bot-type" value="normal" checked>
+                    <span>ربات دنس معمولی</span>
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="bot-type" value="vip">
+                    <span>VIP XP Level Bot</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- دکمه‌ها -->
+        <div class="button-group">
+            <button id="get-bot-btn">
+                <i class="fa-solid fa-rocket"></i> دریافت ربات
+            </button>
+            <button id="status-btn" disabled>
+                <i class="fa-solid fa-chart-simple"></i> وضعیت سرور (به‌زودی)
+            </button>
+        </div>
+
+    </section>
+
+    <!-- لاگ -->
+    <section id="log-section">
+        <div id="log-box"></div>
+    </section>
+
+    <!-- وضعیت -->
+    <section id="status-box">
+        <h3><i class="fa-solid fa-info-circle"></i> آخرین وضعیت</h3>
+        <ul>
+            <li><i class="fa-solid fa-check-circle success-icon"></i> آخرین درخواست موفق</li>
+            <li><i class="fa-solid fa-clock rotate-icon"></i> در انتظار تایید</li>
+            <li><i class="fa-solid fa-exclamation-triangle error-icon"></i> خطا در ارسال</li>
+        </ul>
+    </section>
+
+    <!-- اطلاعات -->
+    <section id="info-box">
+        <div class="info-item">
+            <span class="info-title"><i class="fa-solid fa-globe"></i> Region</span>
+            <span class="info-value">ME</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-title"><i class="fa-solid fa-robot"></i> Bot</span>
+            <span class="info-value">777x</span>
+        </div>
+    </section>
+
+    <!-- راهنما -->
+    <section id="guide">
+        <h2><i class="fa-solid fa-map-pin"></i> راهنما</h2>
+        <ol>
+            <li>نوع ربات را انتخاب کنید</li>
+            <li>اطلاعات خواسته شده را وارد کنید</li>
+            <li>روی دریافت ربات بزنید</li>
+        </ol>
+    </section>
+
+    <!-- فوتر -->
+    <footer id="footer">
+        <button id="creator-btn">
+            <i class="fa-solid fa-crown"></i> Creator
+        </button>
+        <p class="credit">Developed for Free Fire Players</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
