@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>@Franciszw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS نئون -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- کانتینر اصلی -->
+<div id="app">
+
+    <!-- هدر -->
+    <header id="header">
+        <h1 id="title"><i class="fa-solid fa-robot"></i></h1>
+        <p id="subtitle">ارسال خودکار درخواست ربات دنس به اکانت شما *</p>
+    </header>
+
+    <!-- فرم اصلی -->
+    <section id="bot-section">
+
+        <!-- فیلد ورودی داینامیک -->
+        <div class="input-group">
+            <label for="ff-id" id="input-label">
+                <i class="fa-solid fa-gamepad"></i> آیدی فری فایر
+            </label>
+            <input type="text" id="ff-id" placeholder="مثال: 4233040092">
+        </div>
+
+        <!-- انتخاب نوع ربات -->
+        <div class="option-group">
+            <span class="option-title"><i class="fa-solid fa-gear"></i> نوع ربات</span>
+
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="bot-type" value="normal" checked>
+                    <span>ربات دنس معمولی</span>
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="bot-type" value="vip">
+                    <span>VIP XP Level Bot</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- دکمه‌ها -->
+        <div class="button-group">
+            <button id="get-bot-btn">
+                <i class="fa-solid fa-rocket"></i> دریافت ربات
+            </button>
+            <button id="status-btn" disabled>
+                <i class="fa-solid fa-chart-simple"></i> وضعیت سرور (به‌زودی)
+            </button>
+        </div>
+
+    </section>
+
+    <!-- لاگ -->
+    <section id="log-section">
+        <div id="log-box"></div>
+    </section>
+
+    <!-- وضعیت -->
+    <section id="status-box">
+        <h3><i class="fa-solid fa-info-circle"></i> آخرین وضعیت</h3>
+        <ul>
+            <li><i class="fa-solid fa-check-circle success-icon"></i> آخرین درخواست موفق</li>
+            <li><i class="fa-solid fa-clock rotate-icon"></i> در انتظار تایید</li>
+            <li><i class="fa-solid fa-exclamation-triangle error-icon"></i> خطا در ارسال</li>
+        </ul>
+    </section>
+
+    <!-- اطلاعات -->
+    <section id="info-box">
+        <div class="info-item">
+            <span class="info-title"><i class="fa-solid fa-globe"></i> Region</span>
+            <span class="info-value">ME</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-title"><i class="fa-solid fa-robot"></i> Bot</span>
+            <span class="info-value">777x</span>
+        </div>
+    </section>
+
+    <section id="xp-stats">
+  <h2><i class="fa-solid fa-gem"></i> XP Level استخراج شده</h2>
+  <div class="xp-box" id="xp-count">0</div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const START_XP = 100;   // عدد شروع
+  const INCREMENT = 34;   // هر 40 ثانیه اضافه میشه
+  const INTERVAL = 40;    // ثانیه
+
+ // تاریخ شروع جهانی دیروز
+const START_DATE = Date.UTC(2026, 0, 3, 0, 0, 0); // Jan 3, 2026, 00:00:00 UTC
+
+  const xpCountEl = document.getElementById("xp-count");
+
+  function updateXP() {
+    if (!xpCountEl) return;
+
+    const now = new Date();
+    const nowUTC = Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate(),
+      now.getUTCHours(),
+      now.getUTCMinutes(),
+      now.getUTCSeconds()
+    );
+
+    const secondsPassed = Math.floor((nowUTC - START_DATE) / 1000);
+    const totalIntervals = Math.max(0, Math.floor(secondsPassed / INTERVAL));
+    const xp = START_XP + totalIntervals * INCREMENT;
+
+    xpCountEl.textContent = xp.toLocaleString(); // عدد خوانا با ویرگول
+  }
+
+  updateXP();
+  setInterval(updateXP, 10000); // آپدیت زنده هر 10 ثانیه
+
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>
